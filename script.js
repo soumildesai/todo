@@ -56,7 +56,7 @@ function clickCheck(e){
     }
 }
 function filterTodo(e){
-    const todos = todoList.children;
+    const todos = todoList.childNodes;
     todos.forEach(function(todo) {
         switch(e.target.value) {
             case "all":
