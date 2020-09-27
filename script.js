@@ -123,14 +123,14 @@ function getTodos(){
     });
 }
 function removeLocalTodos(todo) {
-        //Check---Hey do i already have things in here?
-        let todos;
-        if(localStorage.getItem("todos") === null) {
-            todos = [];
-        } else {
-            todos = JSON.parse(localStorage.getItem("todos"));
-        }
-        
+    //Check---Hey do i already have things in here?
+    let todos;
+    if(localStorage.getItem("todos") === null) {
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+
     const todoIndex = todo.children[0].innerText;
     todos.splice(todos.indexOf(todoIndex), 1);
     localStorage.setItem("todos", JSON.stringify(todos));
