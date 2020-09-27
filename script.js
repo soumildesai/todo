@@ -57,8 +57,10 @@ function clickCheck(e){
 }
 function filterTodo(e){
     const todos = todoList.childNodes;
-    todos.forEach(function(todo) {
-        switch(e.target.value) {
+    todos.forEach(todoStuff(todo));
+}
+function todostuff(todo){
+     switch(e.target.value) {
             case "all":
                 todo.style.display = "flex";
                 break;
@@ -77,7 +79,6 @@ function filterTodo(e){
                 }  
                 break;
         }
-    });
 }
 function saveLocalTodos(todo){
     let todos;
