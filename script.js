@@ -122,14 +122,16 @@ function getTodos(){
     todoList.appendChild(todoDiv);
     });
 }
-function removeLocalTodos(){
-    let todos;
-    if(localStorage.getItem('todos') === null){
-        todos = [];
-    }else{
-        todos = JSON.parse(localStorage.getItem('todos'));
-    }
-    console.log(todos.children);
-    const todoIndex = todos.children[0].innerText;
+function removeLocalTodos(todo) {
+        //Check---Hey do i already have things in here?
+        let todos;
+        if(localStorage.getItem("todos") === null) {
+            todos = [];
+        } else {
+            todos = JSON.parse(localStorage.getItem("todos"));
+        }
+        
+    const todoIndex = todo.children[0].innerText;
     todos.splice(todos.indexOf(todoIndex), 1);
+    localStorage.setItem("todos", JSON.stringify(todos));
 }
