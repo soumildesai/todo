@@ -55,12 +55,10 @@ function clickCheck(e){
         todo.classList.toggle("completed");
     }
 }
-function filterTodo(e){
+function filterTodo(e) {
     const todos = todoList.childNodes;
-    todos.forEach(todoStuff(todo));
-}
-function todostuff(todo){
-     switch(e.target.value) {
+    todos.forEach(function(todo) {
+        switch(e.target.value) {
             case "all":
                 todo.style.display = "flex";
                 break;
@@ -68,17 +66,18 @@ function todostuff(todo){
                 if(todo.classList.contains("completed")) {
                     todo.style.display = "flex";
                 } else {
-                   todo.style.display = "none"; 
+                    todo.style.display = "none";
                 }
                 break;
-            case "incomplete":
-                if(!todo.classList.contains("completed")){
+            case "uncompleted":
+                if(!todo.classList.contains("completed")) {
                     todo.style.display = "flex";
-                }else{
+                } else {
                     todo.style.display = "none";
-                }  
+                }
                 break;
         }
+    });
 }
 function saveLocalTodos(todo){
     let todos;
